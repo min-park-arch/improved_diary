@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Diary</title>
+</head>
+<body style="text-align: center;">
+  <h1>새로운 일기쓰기</h1><br><br>
+  <form action="{% url 'create' %}" method="post">
+    {% csrf_token %}
+    <p>제목: <input type="text" name = "title"></p>
+    <p>본문: <textarea name="body" id="" cols="60" rows="30"></textarea><input type="submit"></p>
+  </form>
+  <div><br><br><br>
+    <a href="{% url 'contents' %}"><button>목차로 돌아가기</button></a>
+  </div>
+</body>
+</html>

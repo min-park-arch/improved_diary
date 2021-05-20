@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Diary</title>
+</head>
+<body style="text-align: center;">
+  <h1>{{blog.title}}</h1>
+  <h3>{{blog.pub_date}}</h3>
+  {{blog.body}} <br><br><br><br><br>
+  <div>
+    <a href="{% url 'edit' blog.id %}"><button>수정하기</button></a>
+    <a href="{% url 'delete' blog.id %}"><button>삭제하기</button></a>
+    <br><br><br>
+    <div>
+      <a href="{% url 'contents' %}"><button>목차로 돌아가기</button></a>
+    </div>
+  </div>
+</body>
+</html>

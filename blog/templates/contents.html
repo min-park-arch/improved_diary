@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contents</title>
+</head>
+<body style="text-align: center;">
+  <h1>목차</h1>
+  <br><a href="{% url 'new' %}"><button>일기쓰기</button></a>
+  <br><br>
+  <div>
+    {% for blog in blogs %}
+    <h6>{{blog.pub_date}}</h6>
+    <h3><a href="{% url 'detail' blog.id %}">{{blog.title}}</a></h3>
+    <br><br>
+    {% endfor %}
+  </div><br><br><br><br><br>
+  <div>
+    <a href="{% url 'home' %}"><button>메인으로 돌아가기</button></a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+# diary
+django CRUD
