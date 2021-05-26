@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contents</title>
-</head>
-<body style="text-align: center;">
+{% extends 'base.html' %}
+
+{% block content%}
+
   <h1>목차</h1>
   <br><a href="{% url 'new' %}"><button>일기쓰기</button></a>
   <br><br>
@@ -20,5 +15,5 @@
   <div>
     <a href="{% url 'home' %}"><button>메인으로 돌아가기</button></a>
   </div>
-</body>
-</html>
+
+{% endblock %}

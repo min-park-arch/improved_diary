@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Diary</title>
-</head>
-<body style="text-align: center;">
+{% extends 'base.html' %}
+
+{% block content%}
+
   <h1>일기 수정하기</h1><br><br>
-  <form action="{% url 'update' blog.id %}" method="post">
+  <form action="{% url 'update' blog.id %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <p>제목: <input type="text" name = "title" value="{{blog.title}}"></p>
-    <p>본문: <textarea name="body" id="" cols="60" rows="30">{{blog.body}}</textarea><input type="submit"></p>
+    <p>본문: <textarea name="body" id="" cols="60" rows="15">{{blog.body}}</textarea>
+    <input type="submit"></p>
   </form>
   <div><br><br><br>
     <a href="{% url 'contents' %}"><button>목차로 돌아가기</button></a>
   </div>  
-</body>
-</html>
+
+{% endblock %}
