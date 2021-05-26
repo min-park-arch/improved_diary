@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content%}
-
-  <h4>2021</h4>
-  <h1>밍구의 일기장</h1>
-  <br>
-  <h3>총 일기 개수 : {{num}} </h3>
-  <br><br><br>
-  <a href="{% url 'contents' %}"><button>목차 보러 가기</button></a>
+  {% if user.is_authenticated %}
+    <h4>2021</h4>
+    <h1>밍구의 일기장</h1>
+    <br>
+    <h3>총 일기 개수 : {{num}} </h3>
+    <br><br><br>
+    <a href="{% url 'contents' %}"><button>목차 보러 가기</button></a>
+  {% else %}
+    <h5>일기장을 보려면</h5>
+    <h1>로그인해주세요</h1>
+    <br><br><br>
+    <a href="{% url 'login' %}"><button>로그인</button></a>
+    <a href="{% url 'signup' %}"><button>회원가입</button></a>
+  {% endif %}
 
 {% endblock %}

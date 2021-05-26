@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body style="text-align: center;">
+  <div>
+    <a href="{% url 'home' %}"><button>메인으로 돌아가기</button></a>
+  </div>
+  <br><br>
+  <h1>Login</h1>
+  <form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="로그인">     
+  </form>
+  <div>
+    <br><br><br><br>
+    <a href="{% url 'signup' %}"><button>회원가입 하러 가기</button></a>
+  </div>
+</body>
+</html>
+  
