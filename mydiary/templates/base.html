@@ -36,7 +36,7 @@
               </li>
               {% if user.is_authenticated %}
                 <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{user.username}} 환영합니다 ^0^ </a>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{user.nickname}} 환영합니다 ^0^ </a>
               </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'logout' %}">로그아웃</a>
